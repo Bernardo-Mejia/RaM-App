@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Characters</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeMd="4" offsetMd="4">
+        <ion-list>
+          <!-- ? ngFor -->
+          <ion-item
+            *ngFor="let character of characters"
+            [routerLink]="['/profile/' + character.id]"
+          >
+            <ion-avatar slot="start">
+              <img [src]="character.image" alt="" />
+            </ion-avatar>
+            <ion-label> {{character.name}} </ion-label>
+            <ion-icon
+              [name]="character.status === 'Alive' ? 'heart' : 'skull-outline'"
+            ></ion-icon>
+          </ion-item>
+          <!-- ? ngFor -->
+          <ion-button slot="start" (click)="prevCharacters()" *ngIf="page>=2"
+            ><ion-icon name="chevron-back"></ion-icon>Prev</ion-button
+          >
+          <ion-button slot="end" (click)="nextCharacters()"
+            >Next<ion-icon name="chevron-forward"></ion-icon></ion-button
+          >
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

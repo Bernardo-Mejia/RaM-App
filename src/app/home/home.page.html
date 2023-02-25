@@ -1,8 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title> Blank </ion-title>
+    <!-- <ion-buttons slot="start">
+      <ion-back-button defaultHref="userlist"></ion-back-button>
+    </ion-buttons> -->
   </ion-toolbar>
 </ion-header>
 
@@ -14,7 +15,17 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-button [routerLink]="['/userlist']">Characters</ion-button>
+    <br>
+    <strong>App by Bernardo Mejía</strong>
+    <p>
+      My projects
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://github.com/Bernardo-Mejia"
+        >My GitHub</a
+      >
+    </p>
   </div>
 </ion-content>
